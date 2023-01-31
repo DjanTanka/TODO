@@ -1,0 +1,32 @@
+body {
+	font-family: Actor;
+	color: white;
+	background-color: black;
+}
+p {
+	margin: 0px;
+}
+
+.wrapper {
+	max-width: 390px;
+	margin: 0 auto;
+	min-height: 650px;
+	background-color: #222222;
+	border-radius: 30px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.container {
+	width: 90%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+.allTodos {
+	margin-top: 20px;
+	width: 100%;
+}

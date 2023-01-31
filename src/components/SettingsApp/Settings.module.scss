@@ -1,0 +1,48 @@
+.container {
+	width: 355px;
+	opacity: 0;
+
+	position: absolute;
+	right: 0px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+
+	top: 1px;
+	z-index: 1;
+
+	background: #333;
+	box-shadow: 1px 14px 9px rgb(0 0 0 / 15%), -8px -8px 20px rgb(255 255 255 / 5%);
+	border-radius: 0 0 25px 25px;
+	box-sizing: border-box;
+
+	animation: showDiv 0.5s forwards;
+}
+
+@keyframes showDiv {
+	0% {
+		opacity: 0;
+	}
+	
+	70% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.item {
+	min-width: 300px;
+	text-align: end;
+}
+
+.layOut {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+}

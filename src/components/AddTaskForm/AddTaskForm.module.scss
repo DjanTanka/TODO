@@ -1,0 +1,54 @@
+.form {
+	width: 100%;
+	padding: 16px;
+	opacity: 0;
+	background: #333;
+	box-shadow: 1px 14px 9px rgb(0 0 0 / 15%), -8px -8px 20px rgb(255 255 255 / 5%);
+	border-radius: 0 0 25px 25px;
+	box-sizing: border-box;
+
+	display: flex;
+	flex-direction: column;
+	
+	position: absolute;
+	width: 355px;
+	z-index: 1;
+
+	animation: showDiv 0.5s forwards;
+}
+
+.layOut {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 1;
+}
+
+@keyframes showDiv {
+	0% {
+		opacity: 0;
+	}
+
+	70% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.datepicker {
+	input {
+		color: white;
+		border: 1px solid white;
+		border-radius: 10px;
+		margin-bottom: 24px;
+	}
+}
+
+.date111 {
+	border: '1px solid red';
+}

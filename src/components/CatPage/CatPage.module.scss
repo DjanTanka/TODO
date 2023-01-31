@@ -1,0 +1,45 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 50px;
+
+	position: relative;
+
+	p {
+		color: #333;
+		font-size: 24px;
+	}
+}
+
+.meow {
+	position: absolute;
+	transform: rotate(348deg) scale(0.8);
+	top: 31px;
+	left: 226px;
+	opacity: 1;
+	animation: meow 1.2s 0.5s  alternate-reverse infinite;
+}
+
+.meow1 {
+	position: absolute;
+	transform: rotate(30deg) scale(1.2);
+	top: -17px;
+	left: 205px;
+	opacity: 1;
+	animation: meow 0.9s 0s  alternate-reverse infinite;
+}
+
+.meow2 {
+	position: absolute;
+	transform: rotate(342deg) scale(1.6);
+	top: -59px;
+  left: 258px;
+	opacity: 1;
+	animation: meow 1.5s 1s alternate-reverse infinite;
+}
+
+@keyframes meow {
+	from { opacity: 0;}				
+	to { opacity: 1;}
+}

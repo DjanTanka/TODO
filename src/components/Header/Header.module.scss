@@ -1,0 +1,39 @@
+.header {
+	box-sizing: border-box;
+	padding: 0 18px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	font-size: 36px;
+	margin-top: 16px;
+	font-weight: 900;
+}
+
+.add {
+	width: 50%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	img {
+		width: 42px;
+	}
+}
+
+.dinamicLineHide {
+	width: 0%;
+	margin-top: 12px;
+	border: 1px solid transparent;
+	
+	transition-duration: 0.5s;
+}
+
+.dinamicLineShow {
+	width: 100%;
+	border: 1px solid white;
+	margin-top: 12px;
+	
+	position: relative;
+
+	transition-duration: 0.5s;
+}
