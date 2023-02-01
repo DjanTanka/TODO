@@ -13,7 +13,9 @@ export type TDrawToDo = [string, TTodo[]];
 export type TodoContextType = {
 	settingNews: number;
 	saveNewSetting: (value: number) => void;
-	news: any;
+	arrayNews: any[],
+	setArrayNews: Dispatch<SetStateAction<any[]>>
+	news: string;
 	setNews: Dispatch<SetStateAction<string>>;
 	isShowOnlyToday: boolean;
 	setIsShowOnlyToday: Dispatch<SetStateAction<boolean>>;

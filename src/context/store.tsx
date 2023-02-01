@@ -14,7 +14,7 @@ export function useStore() {
 
 const StoreProvider: FC<TStoreProps> = ({ children }) => {
 	const [settingNews, setSettingNews] = useState<number>(1);
-	
+	const [arrayNews, setArrayNews] = useState<any>([])
 	const [news, setNews] = useState<any>('')
 	const saveNewSetting = (value: number) => {
 		setSettingNews(value);
@@ -25,6 +25,8 @@ const StoreProvider: FC<TStoreProps> = ({ children }) => {
 	const values = {
 		settingNews,
 		saveNewSetting,
+		arrayNews,
+		setArrayNews,
 		news,
 		setNews,
 		isShowOnlyToday,

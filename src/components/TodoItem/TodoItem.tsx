@@ -18,6 +18,7 @@ export type TTodoItemProps = {
 
 export const TodoItem: FC<TTodoItemProps> = ({ id, task, isDone, handleChangeDone, handleDelete, index, isToday }) => {
 	const { news, settingNews } = useStore();
+	
 	return (
 		<>
 			<div key={id} className={styles.container}>
@@ -49,7 +50,7 @@ export const TodoItem: FC<TTodoItemProps> = ({ id, task, isDone, handleChangeDon
 					{isToday && news && settingNews === 0 && (
 						<div style={{ overflow: 'hidden', width: '100%' }}>
 							<div className={styles.marquee}>
-								<p>{news?.title}</p>
+								<p>{news}</p>
 							</div>
 						</div>
 					)}

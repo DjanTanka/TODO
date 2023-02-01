@@ -8,14 +8,14 @@ const getNews = () => {
 	);
 };
 
-export const useGetNews = (n: number) => {
+export const useGetNews = () => {
 	const query = useQuery<any, Error>(['news'], () => getNews());
 
-	const news = query?.data?.articles[n];
+	const arrayNewsFromApi = query?.data?.articles;
 	const isLoading = query.isFetching;
 
 	return {
-		news,
+		arrayNewsFromApi,
 		isLoading,
 	} as const;
 };

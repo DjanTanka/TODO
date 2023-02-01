@@ -70,7 +70,7 @@ export const TodoList: FC<TTodoListProps> = ({ date, todos, handleChangeDone, ha
 				)}
 				{isToday && news && settingNews === 1 && (
 					<div className={styles.marquee}>
-						<p>{news?.title}</p>
+						<p>{news}</p>
 					</div>
 				)}
 			</div>

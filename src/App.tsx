@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useEffect } from 'react';
 import { useStore } from 'context/store';
 import { TodoList } from 'components/TodoList/TodoList';
 import { Header } from 'components/Header/Header';
@@ -9,13 +9,12 @@ import { showDate } from 'utils';
 import styles from './App.module.scss';
 
 const App: FC = () => {
-	const [rundomNews, setRundomNews] = useState<number>(0);
 	const { todos } = useGetToDos();
 	const { mutate: deleteTask } = useDeletTask();
 	const { mutate: changeDone } = useChangeDone();
-	const { news } = useGetNews(rundomNews);
+	const { arrayNewsFromApi } = useGetNews();
 
-	const { setNews, isShowOnlyToday } = useStore();
+	const { arrayNews, setArrayNews,  setNews, isShowOnlyToday } = useStore();
 
 	const handleDelete = (id: number): void => {
 		return deleteTask(id);
@@ -24,14 +23,23 @@ const App: FC = () => {
 	const handleChangeDone = (id: number, isDone: boolean) => {
 		changeDone({ id, isDone });
 	};
+	
+	useEffect(() => {
+		if (arrayNewsFromApi) {
+			setArrayNews(arrayNewsFromApi)
+			const random = Math.floor(Math.random() * 20 + 1)
+			setNews(arrayNewsFromApi[random].title);
+		}
+	}, [arrayNewsFromApi]);
 
 	useEffect(() => {
-		setRundomNews(Math.floor(Math.random() * 20 + 1));
-	}, []);
+		let timerId = setInterval((arr) => {
+			const random = Math.floor(Math.random() * 20 + 1)
+			setNews(arr[random].title);
+		}, 60000, arrayNews);
 
-	useEffect(() => {
-		setNews(news);
-	}, [news]);
+		return () => clearTimeout(timerId);
+	}, [arrayNews]);
 
 	return (
 		<div className={styles.wrapper}>
